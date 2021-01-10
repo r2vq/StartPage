@@ -23,12 +23,14 @@ img.foreground {
 	background: var(--btn-color);
 	border: 1px solid #ffffff;
 	border-radius: 50px;
+	cursor: pointer;
 	display: flex;
 	font-size: 30pt;
 	height: 100px;
 	justify-content: center;
 	margin: 20px;
 	position: relative;
+	transition: .2s transform;
 	width: 100px;
 }
 .button:hover {

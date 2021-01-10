@@ -14,6 +14,7 @@ A custom start page for my Chrome browser. It's really just for personal use and
       * [FontAwesome](#fontawesome)
       * [MDN Web Docs](#mdn-web-docs)
       * [Programming Quotes API](#programming-quotes-api)
+      * [Reddit User Capuno6](#reddit-user-capuno6)
       * [Silk](#silk)
       * [Vimium](#vimium)
       * [W3Schools](#w3schools)
@@ -118,6 +119,9 @@ I had to rely on [MDN Web Docs](https://developer.mozilla.org/en-US/) for how to
 
 ## Programming Quotes API
 The quotes on the page are retrieved using the [Programming Quotes API](http://quotes.stormconsultancy.co.uk/api) built by [@adam_pope](https://twitter.com/adam_pope) of Storm Consultancy.
+
+## Reddit User Capuno6
+Suggested cursor and transition elements for .buttons in [this comment](https://www.reddit.com/r/startpages/comments/ku7kx4/super_simple_silk_startpage_my_first/gir9m4a/).
 
 ## Silk
 The images I am using for the background and foreground were found using Google Images when I searched for Cindy Moon. The foreground I chose seems to come from [Silk (2015) #1](https://www.marvel.com/comics/issue/55637/silk_2015_1) and the background from [Silk (2015) #19](https://www.marvel.com/comics/issue/61052/silk_2015_19).
