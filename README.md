@@ -15,6 +15,7 @@ A custom start page for my Chrome browser. It's really just for personal use and
       * [MDN Web Docs](#mdn-web-docs)
       * [Programming Quotes API](#programming-quotes-api)
       * [Silk](#silk)
+      * [Vimium](#vimium)
       * [W3Schools](#w3schools)
 
 # Description
@@ -120,6 +121,9 @@ The quotes on the page are retrieved using the [Programming Quotes API](http://q
 
 ## Silk
 The images I am using for the background and foreground were found using Google Images when I searched for Cindy Moon. The foreground I chose seems to come from [Silk (2015 #1](https://www.marvel.com/comics/issue/55637/silk_2015_1) and the background from [Silk (2015) #19](https://www.marvel.com/comics/issue/61052/silk_2015_19).
+
+## Vimium
+I use [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en) on most sites, particularly for the keyboard shortcuts. It was important to have that on this page too, so I modeled my hints after Vimium's.
 
 ## W3Schools
 The examples on [W3Schools](https://www.w3schools.com/) was very helpful for CSS.
