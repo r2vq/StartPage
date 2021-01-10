@@ -64,29 +64,29 @@ const getQotd = () => {
 	let cached = JSON.parse(localStorage.getItem(STORAGE_KEY_QOTD));
 	if (cached && cached.date === now) {
 		return Promise.resolve(cached);
-    } else {
-	    return new Promise((resolve, reject) => {
-		    var xhttp = new XMLHttpRequest();
-		    xhttp.onreadystatechange = function() {
-			    if (this.readyState == RESPONSE_STATE_OK) {
-				    if (this.status == RESPONSE_STATUS_GOOD) {
-					    let responseBody = JSON.parse(this.responseText);
-					    let qotd = {
-						    date: now,
-						    quote: responseBody.quote,
-						    author: responseBody.author
-					    };
-					    localStorage.setItem(STORAGE_KEY_QOTD, JSON.stringify(qotd));
-					    resolve(qotd);
-				    } else {
-					    reject(ERROR_MESSAGE_QOTD);
-				    }
-			    }
-		    };
-		    xhttp.open(REQUEST_TYPE_GET, REQUEST_URL_QOTD, true);
-		    xhttp.send();
-	    });
-    }
+	} else {
+		return new Promise((resolve, reject) => {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == RESPONSE_STATE_OK) {
+					if (this.status == RESPONSE_STATUS_GOOD) {
+						let responseBody = JSON.parse(this.responseText);
+						let qotd = {
+							date: now,
+							quote: responseBody.quote,
+							author: responseBody.author
+						};
+						localStorage.setItem(STORAGE_KEY_QOTD, JSON.stringify(qotd));
+						resolve(qotd);
+					} else {
+						reject(ERROR_MESSAGE_QOTD);
+					}
+				}
+			};
+			xhttp.open(REQUEST_TYPE_GET, REQUEST_URL_QOTD, true);
+			xhttp.send();
+		});
+	}
 };
 
 const onItemSelected = (element) => {
