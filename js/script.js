@@ -123,7 +123,10 @@ const onKeyPress = (event) => {
 
 const parseButton = (button) => {
 	let div = document.createElement(ELEMENT_DIV);
-	div.appendChild(parseButtonImage(button.image));
+	let image = parseButtonImage(button.image);
+	if (image !== null) {
+		div.appendChild(image);
+	}
 	div.classList.add(CLASS_BUTTON);
 	div.setAttribute(ATTR_HINT, button.key);
 	div.setAttribute(ATTR_URL, button.url);
