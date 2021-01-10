@@ -68,10 +68,10 @@ The root of the config object has 3 properties: `background`, `foreground`, and 
 ## Modules
 The `modules` Array holds Module objects. These are shown in order as a vertical list on the screen.
 
-| Property | Required | Type   | Description                                  |
-| -------- | -------- | ------ | -------------------------------------------- |
-| `type`   | `true`   | String | Can either be `time`, `quote`, or `buttons`. |
-| `data`   | `true`   | String | The data for the module. Can be empty.       |
+| Property | Required | Type   | Description                                          |
+| -------- | -------- | ------ | ---------------------------------------------------- |
+| `type`   | `true`   | String | Can either be `time`, `date`, `quote`, or `buttons`. |
+| `data`   | `true`   | String | The data for the module. Can be empty.               |
 
 ## Buttons
 The buttons that appear in the `data` section of `buttons` type modules.

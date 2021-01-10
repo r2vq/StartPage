@@ -6,6 +6,9 @@ const config = {
             type: "time",
         },
         {
+            type: "date",
+        },
+        {
             type: "quote",
         },
         {

@@ -64,6 +64,9 @@ img.foreground {
 	padding: 0;
 	width: 100%;
 }
+.date {
+	font-size: large;
+}
 .hintable:before {
 	align-items: center;
 	background: #ffff66;

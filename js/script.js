@@ -9,6 +9,7 @@ const CLASS_BUTTON = "button";
 const CLASS_BUTTONS = "buttons";
 const CLASS_CLOCK = "clock";
 const CLASS_CONTAINER = "container";
+const CLASS_DATE = "date";
 const CLASS_ERROR = "error";
 const CLASS_FOREGROUND = "foreground";
 const CLASS_HINT = "hintable";
@@ -16,8 +17,15 @@ const CLASS_QOTD = "qotd";
 const CLASS_QUOTE = "quote";
 const CONFIG_IMAGE_TYPE_AWESOME = "awesome";
 const CONFIG_KEY_BUTTONS = "buttons";
+const CONFIG_KEY_DATE = "date";
 const CONFIG_KEY_QUOTE = "quote";
 const CONFIG_KEY_TIME = "time";
+const DATE_LOCALE = "en-CA";
+const DATE_OPTIONS = {
+	weekday: "long",
+	month: "long",
+	day: "numeric"
+};
 const ELEMENT_DIV = "div";
 const ELEMENT_ICON = "i";
 const ELEMENT_IMG = "img";
@@ -141,6 +149,12 @@ const parseButtons = (module) => {
 	return div;
 };
 
+const parseDate = (module) => {
+	let div = document.createElement(ELEMENT_DIV);
+	div.classList.add(CLASS_DATE);
+	return div;
+};
+
 const parseForegroundImage = (image) => {
 	let img = document.createElement(ELEMENT_IMG);
 	img.classList.add(CLASS_FOREGROUND);
@@ -180,6 +194,8 @@ const parseTime = (module) => {
 
 const parseModule = (module) => {
 	switch(module.type) {
+		case CONFIG_KEY_DATE:
+			return parseDate(module);
 		case CONFIG_KEY_TIME:
 			return parseTime(module);
 		case CONFIG_KEY_BUTTONS:
@@ -191,8 +207,14 @@ const parseModule = (module) => {
 	}
 };
 
-const setTime = (element) => {
-	element.textContent = new Date().toLocaleTimeString(TIME_LOCALE, TIME_OPTIONS);
+const setDateAndTime = (clockElements, dateElements) => {
+	let now = new Date();
+	let timeString = now.toLocaleTimeString(TIME_LOCALE, TIME_OPTIONS);
+	let dateString = now.toLocaleDateString(DATE_LOCALE, DATE_OPTIONS);
+	clockElements
+		.forEach(element => element.textContent = timeString);
+	dateElements
+		.forEach(element => element.textContent = dateString);
 	setInterval(() => setTime(element), REFRESH_INTERVAL);
 };
 
@@ -223,7 +245,9 @@ let main = (() => {
 	document
 		.addEventListener(EVENT_KEYPRESS, onKeyPress);
 
-	document
-		.querySelectorAll(`.${CLASS_CLOCK}`)
-		.forEach(setTime);
+	let clockElements = document
+		.querySelectorAll(`.${CLASS_CLOCK}`);
+	let dateElements = document
+		.querySelectorAll(`.${CLASS_DATE}`);
+	setDateAndTime(clockElements, dateElements);
 })();
