@@ -100,12 +100,12 @@ const onKeyPress = (event) => {
 		return;
 	}
 
-	if (event.key === KEY_REFRESH) {
-		location.reload();
-		return;
-	}
-
 	if (isHintEnabled) {
+		if (event.key === KEY_REFRESH) {
+			location.reload();
+			return;
+		}
+
 		document.querySelectorAll(`.${CLASS_BUTTON}`)
 			.forEach((button) => {
 				if (event.key === button.dataset.hint) {
