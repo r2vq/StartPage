@@ -220,7 +220,7 @@ const setDateAndTime = (clockElements, dateElements) => {
 		.forEach(element => element.textContent = timeString);
 	dateElements
 		.forEach(element => element.textContent = dateString);
-	setInterval(() => setTime(element), REFRESH_INTERVAL);
+	setInterval(() => setDateAndTime(clockElements, dateElements), REFRESH_INTERVAL);
 };
 
 const toggleAllHintables = (isEnabled) => {
