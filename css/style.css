@@ -37,8 +37,8 @@ img.foreground {
 	transform: scale(1.2);
 }
 .button>img {
-	height: 50px;
-	width: 50px;
+	height: 40px;
+	width: 40px;
 }
 .buttons {
 	align-content: start;

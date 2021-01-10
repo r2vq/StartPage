@@ -90,8 +90,9 @@ The image that is shown on the button can be an image or an awesome font charact
 
 | Property  | Required | Type   | Description                                                                       |
 | --------- | -------- | ------ | --------------------------------------------------------------------------------- |
-| `type`    | `true`   | String | Can be `awesome` for an awesome icon.                                             |
-| `classes` | `true`   | Array  | The classes to apply to the image. This is important for awesome font characters. |
+| `type`    | `true`   | String | Can be `awesome` for an awesome icon or `asset` for an image file.                |
+| `classes` | `false`  | Array  | The classes to apply to the image. This is important for awesome font characters. |
+| `url`     | `false`  | String | Required for `asset` type images. The URL of the image asset.                     |
 
 # Usage
 Set this as your start page to have Cindy Moon show up whenever you open a new tab.

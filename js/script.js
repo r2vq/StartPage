@@ -15,6 +15,7 @@ const CLASS_FOREGROUND = "foreground";
 const CLASS_HINT = "hintable";
 const CLASS_QOTD = "qotd";
 const CLASS_QUOTE = "quote";
+const CONFIG_IMAGE_TYPE_ASSET = "asset";
 const CONFIG_IMAGE_TYPE_AWESOME = "awesome";
 const CONFIG_KEY_BUTTONS = "buttons";
 const CONFIG_KEY_DATE = "date";
@@ -140,6 +141,10 @@ const parseButtonImage = (image) => {
 			let awesome = document.createElement(ELEMENT_ICON);
 			image.classes.forEach(className => awesome.classList.add(className));
 			return awesome;
+		case CONFIG_IMAGE_TYPE_ASSET:
+			let asset = document.createElement(ELEMENT_IMG);
+			asset.src = image.url;
+			return asset;
 		default:
 			return null;
 	}
