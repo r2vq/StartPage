@@ -104,13 +104,18 @@ const onKeyPress = (event) => {
 		return;
 	}
 
-	document.querySelectorAll(`.${CLASS_BUTTON}`)
-		.forEach((button) => {
-			if (event.key === button.dataset.hint) {
-				onItemSelected(button);
-				return;
-			}
-		});
+	if (isHintEnabled) {
+		document.querySelectorAll(`.${CLASS_BUTTON}`)
+			.forEach((button) => {
+				if (event.key === button.dataset.hint) {
+					onItemSelected(button);
+					return;
+				}
+			});
+	} else {
+		isHintEnabled = false;
+	}
+
 
 	toggleAllHintables(false);
 	console.log(`Unmapped keypress: ${event.key}`);
