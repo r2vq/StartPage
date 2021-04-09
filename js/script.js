@@ -54,7 +54,7 @@ let isHintEnabled = false;
 
 // extension functions
 
-Array.prototype.mapNotNull = function(mapper) {
+Array.prototype.mapNotNull = function (mapper) {
 	return this.map(mapper).filter(item => item !== null);
 };
 
@@ -68,7 +68,7 @@ const getQotd = () => {
 	} else {
 		return new Promise((resolve, reject) => {
 			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
+			xhttp.onreadystatechange = function () {
 				if (this.readyState == RESPONSE_STATE_OK) {
 					if (this.status == RESPONSE_STATUS_GOOD) {
 						let responseBody = JSON.parse(this.responseText);
@@ -136,7 +136,7 @@ const parseButton = (button) => {
 };
 
 const parseButtonImage = (image) => {
-	switch(image.type) {
+	switch (image.type) {
 		case CONFIG_IMAGE_TYPE_AWESOME:
 			let awesome = document.createElement(ELEMENT_ICON);
 			image.classes.forEach(className => awesome.classList.add(className));
@@ -206,7 +206,7 @@ const parseTime = (module) => {
 };
 
 const parseModule = (module) => {
-	switch(module.type) {
+	switch (module.type) {
 		case CONFIG_KEY_DATE:
 			return parseDate(module);
 		case CONFIG_KEY_TIME:
